@@ -89,13 +89,15 @@ var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
             flag = true;
 
 
+
+
             var barcode = "";
             $(document).keydown(function (e) {
                 var code = (e.keyCode ? e.keyCode : e.which);
                 console.log(code);
                 if(flag !== false) {
                     //if(code === 13)// Enter key hit
-                    if (code === 13) {
+                    if (barcode.length === 6) {
 
                         flag = false;
                         alert(barcode);
@@ -128,6 +130,7 @@ var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
                       });
                     }
                     else {
+
                         barcode = barcode + String.fromCharCode(code);
                     }
                 }
