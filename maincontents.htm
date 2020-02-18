@@ -100,7 +100,7 @@ var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
                     if (barcode.length === 6) {
 
                         flag = false;
-                        alert(barcode);
+                        //alert(barcode);
                         //barcode = barcode.split('').join('');
                         //var array = barcode.split("Ü");
                         //var scancode = array[0].toString().toLowerCase();
@@ -110,8 +110,7 @@ var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
                         //var array = barcode.split("ü");
                         //var scancode = array[0].toString().toLowerCase();
                         //alert(scancode);
-                        var bnumber=barcode.slice(0, 6);
-                        alert(bnumber);
+                        //var bnumber=barcode.slice(0, 6);
                         $.ajax({
                           dataType: 'JSON',
                           cache: false,
@@ -120,14 +119,14 @@ var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
                           method: 'getPartnerBadge',
                           returnformat: 'json',
                           authToken: authToken,
-                          badgeNumber: bnumber
+                          badgeNumber: barcode
                         },
                         success: function(j) {
                           //do something with j
-
-                          alert("Welcome " + j.FIRSTNAME);
+                          alert("Welcome " + j.FIRSTNAME + " " + j.LASTNAME);
                         }
                       });
+                        barcode = "";
                     }
                     else {
 
