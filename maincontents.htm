@@ -29,41 +29,26 @@
     <div class="config" onclick="FC_ContentsCall('Config')">
         <img src="assets/home-config.png" height="80">
     </div>
-    <!--<div class="img-home" onclick="location.href ='maincontents.htm'"></div>-->
-    <div class="logo">
-      <!--<img src="assets/logo-white.png" onclick="ShowKeyboard()" width="">-->
-    </div>
-
   </header>
 
-<section class="main-content">
-   <div class="header" style="width: 1080; height: 420px;display: block;background-color: white;">
-    <div class="config" onclick="FC_ContentsCall('Config')" style="position: absolute;
-    width: 50px;
-    height: 50px;"></div>
-     <div class="first-block" style="width: 980px;background-color: white;height: 335px;
-    position: absolute;left: 50px;top: 220px;border-radius: 50px;
-    -webkit-box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
-    -moz-box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
-    box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
-    font-size: 75PX;
-    font-weight: bold;
-    padding-top: 80px;
-    text-align: center;
-    color: black;
-    ">
+  <section class="main-content">
+    <div class="header" style="width: 1080; height: 420px;display: block;background-color: white;">
+    
+      <div class="first-block" style="width: 980px;background-color: white;height: 335px;position: absolute;left: 50px;top: 220px;border-radius: 50px;
+        -webkit-box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
+        -moz-box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
+        box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
+        font-size: 75PX;font-weight: bold;padding-top: 80px;text-align: center;color: black;">
        PLEASE SCAN YOUR BADGE TO BEGIN<img src="assets/arrow.png" width="200" onclick="location.href= 'menu.html'">
      </div>
-   </div>
+    </div>
     <img src="assets/logo.png" style="position: absolute;top: 790px;left: 20px;width: 1026px;">
-    
-</section>
+  </section>
 
-<footer style="">
+  <footer style="">
   </footer>
   <div id="dialog-overlay"></div>
- <div id="dialog-box" style="">
-      
+  <div id="dialog-box" style="">    
   </div>
   <style type="text/css">
     body{
@@ -97,7 +82,7 @@
     }
   </style>
 <script>
-
+var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
         //ChangeLanguage('en-us');
         $(document).ready(function() {
 
@@ -113,39 +98,34 @@
                     if (code === 16) {
 
                         flag = false;
-                        //alert(barcode);
+                        alert(barcode);
                         //barcode = barcode.split('').join('');
                         //var array = barcode.split("Ü");
                         //var scancode = array[0].toString().toLowerCase();
-                        //var bnumber = array[1].toString().toLowerCase();
+                        //var bnumber = array[0].toString().toLowerCase();
                         //var fname = array[2].toString().toLowerCase();
                         //var lname = array[3].toString().toLowerCase();
                         //var array = barcode.split("ü");
                         //var scancode = array[0].toString().toLowerCase();
                         //alert(scancode);
-
-
-                    var dataString = {'ScanCode': barcode};
+                        var bnumber=barcode.slice(0, 6);
+                        alert(bnumber);
                         $.ajax({
-                            url: "https://robotaisolutions.com/BadgeScanning/interstateRestoration.php",
-                            type: "post",
-                            data: dataString,
+                          dataType: 'JSON',
+                          cache: false,
+                          url: 'https://mxlsandbox.expologic.com/api/api.cfc',
+                          data: {
+                          method: 'getPartnerBadge',
+                          returnformat: 'json',
+                          authToken: authToken,
+                          badgeNumber: bnumber
+                        },
+                        success: function(j) {
+                          //do something with j
 
-                            success: function (data) {
-                                console.log(data);
-                                if (data.response === 'success') {
-                                    PlaySpeech("Welcome" + data.fname + " " + data.lname);
-                                    //alert(scancode);
-                                    barcode = "";
-                                    array = null;
-                                    location.href = "menu.html";
-                                }
-
-                            }
-                        });
-                    
-
-
+                          alert("Welcome " + j.FIRSTNAME);
+                        }
+                      });
                     }
                     else {
                         barcode = barcode + String.fromCharCode(code);
