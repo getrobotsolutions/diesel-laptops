@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/Language.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/custom.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="maincontents.js"></script>
+    <script src="boots/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="boots/css/bootstrap.min.css">
+    
+    <link href="css/Main.css" rel="stylesheet" type="text/css"/>
+
+    <style>
+       
+
+    </style>
+</head>
+
+
+<body  onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;" style="-ms-user-select:none;" oncontextmenu="return false;">
+
+  <header onclick="">
+    <div class="config" onclick="FC_ContentsCall('Config')">
+        <img src="assets/home-config.png" height="80">
+    </div>
+    <!--<div class="img-home" onclick="location.href ='maincontents.htm'"></div>-->
+    <div class="logo">
+      <!--<img src="assets/logo-white.png" onclick="ShowKeyboard()" width="">-->
+    </div>
+
+  </header>
+
+<section class="main-content">
+   <div class="header" style="width: 1080; height: 420px;display: block;background-color: white;">
+    <div class="config" onclick="FC_ContentsCall('Config')" style="position: absolute;
+    width: 50px;
+    height: 50px;"></div>
+     <div class="first-block" style="width: 980px;background-color: white;height: 335px;
+    position: absolute;left: 50px;top: 220px;border-radius: 50px;
+    -webkit-box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
+    -moz-box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
+    box-shadow: 0px 35px 5px 2px rgb(15, 9, 12);
+    font-size: 75PX;
+    font-weight: bold;
+    padding-top: 80px;
+    text-align: center;
+    color: black;
+    ">
+       PLEASE SCAN YOUR BADGE TO BEGIN<img src="assets/arrow.png" width="200" onclick="location.href= 'menu.html'">
+     </div>
+   </div>
+    <img src="assets/logo.png" style="position: absolute;top: 790px;left: 20px;width: 1026px;">
+    
+</section>
+
+<footer style="">
+  </footer>
+  <div id="dialog-overlay"></div>
+ <div id="dialog-box" style="">
+      
+  </div>
+  <style type="text/css">
+    body{
+      background-color: #004990;
+    }
+    header{
+      background-color: #ffb111;
+      height: 400px;
+    }
+
+    .welcome-text{
+      color: #253667;
+      font-size: 80px;
+      position: relative;
+      top: 750px;
+      text-align: center;
+      width: 600px;
+      font-weight: bold;
+    }
+
+    .main-content {
+      height: 1098px;
+      margin-top: 0;
+      padding-top: 10px;
+      background-color: white;
+      border: none;
+    }
+
+    footer{
+      background-color: #ffb111;height: 420px;bottom: 0:border:none
+    }
+  </style>
+<script>
+
+        //ChangeLanguage('en-us');
+        $(document).ready(function() {
+
+            flag = true;
+
+
+            var barcode = "";
+            $(document).keydown(function (e) {
+                var code = (e.keyCode ? e.keyCode : e.which);
+                console.log(code);
+                if(flag !== false) {
+                    //if(code === 13)// Enter key hit
+                    if (code === 16) {
+
+                        flag = false;
+                        //alert(barcode);
+                        //barcode = barcode.split('').join('');
+                        //var array = barcode.split("Ü");
+                        //var scancode = array[0].toString().toLowerCase();
+                        //var bnumber = array[1].toString().toLowerCase();
+                        //var fname = array[2].toString().toLowerCase();
+                        //var lname = array[3].toString().toLowerCase();
+                        //var array = barcode.split("ü");
+                        //var scancode = array[0].toString().toLowerCase();
+                        //alert(scancode);
+
+
+                    var dataString = {'ScanCode': barcode};
+                        $.ajax({
+                            url: "https://robotaisolutions.com/BadgeScanning/interstateRestoration.php",
+                            type: "post",
+                            data: dataString,
+
+                            success: function (data) {
+                                console.log(data);
+                                if (data.response === 'success') {
+                                    PlaySpeech("Welcome" + data.fname + " " + data.lname);
+                                    //alert(scancode);
+                                    barcode = "";
+                                    array = null;
+                                    location.href = "menu.html";
+                                }
+
+                            }
+                        });
+                    
+
+
+                    }
+                    else {
+                        barcode = barcode + String.fromCharCode(code);
+                    }
+                }
+                
+
+            });
+
+        });
+    </script>
+
+<script>
+   /* 
+
+
+    
+
+        var dataString = {'ScanCode': message, 'q1':q1 , 'q2': q2};
+
+        $.ajax({
+            url: "https://robotaisolutions.com/BadgeScanning/crownBioApi.php",
+            type: "post",
+            data: dataString,
+
+            success: function (data) {
+                //alert(data);
+                console.log(data);
+                if (data.response === 'success') {
+                    //alert("Hi " + fname + " " + lname + ", welcome to the Crown Bio" + scanCode +" "+ bnumber);
+                    //alert(scancode);
+                    barcode = "";
+                    array = null;
+                    location.href = "menu.html";
+                }
+
+            }
+        });
+    
+*/
+</script>
+</body>
+</html>

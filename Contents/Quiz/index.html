@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/Language.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script language="JavaScript" type="text/javascript" src="../../maincontents.js"></script>
+    <!--<script src="../../boots/js/bootstrap.min.js"></script>-->
+    
+
+    <link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+    <link href="css/quiz.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/Main.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- jQuery & jQuery UI + theme (required) -->
+  <link href="css/jquery-ui.min.css" rel="stylesheet">
+  <script src="js/jquery-latest.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>  
+  <!--<script src="js/bootstrap.min.js"></script>
+   jQuery & jQuery UI + theme (required) -->
+
+  <!-- keyboard widget css & script (required) -->
+  <link href="css/keyboard.css" rel="stylesheet">
+  <script src="js/jquery.keyboard.js"></script>
+  <!-- keyboard widget css & script (required) -->
+
+  <!--<link rel="stylesheet" href="../../style.css">-->
+    
+</head>
+
+<body onload="" onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;"  oncontextmenu="return false;" style="-ms-user-select:none;padding: 0; margin: 0; background-repeat: no-repeat; width: 1080px; height: 1920px; overflow: scroll;" class="noselect unselectable">
+<header>
+  <div class="logo" src onclick="FC_ContentsCall('Menu')">
+    <img src="../../assets/logo.png">
+  </div>
+</header>
+<nav>
+  <img src="../../assets/icons/home.png" class="img-home" onclick="FC_ContentsCall('Menu')">
+</nav>
+<section class="main-content">
+   <h1 class="title">How good is your driving?
+</h1>
+<main>
+  <form onsubmit="return formSubmit();" id="gameform" name="gameform" method="POST" action=""  >
+
+    <div class="tab1 tab-panel">
+        <div class="inputHead">Please sign up to play game</div>
+      <div class="qcont">
+        <div class="inputgroup">
+        <label style="margin-right: 25px;">Name</label><input id="name" type="text" name="username" value="" required="">
+       </div>
+       <div class="inputgroup">
+             <label>Email </label>
+             <input type="email" id="email" name="email" value="" required="">
+       </div>
+       <button id="SignUppGame" type="button">Sign Up To Play</button>
+      </div>
+    </div>
+
+<!-------Tab 2------->
+    <div class="tab2 tab-panel">
+      <div class="inputHead">Pick a vehicle</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q1" value="2"  class="q1">
+            <span class="checkmark Q1A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q1" value="4" class="q1">
+            <span class="checkmark Q1B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q1" value="3" class="q1">
+            <span class="checkmark Q1C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q1" value="1" class="q1">
+             <span class="checkmark Q1D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 2------->
+
+
+<!-------Tab 3------->
+    <div class="tab3 tab-panel">
+      <div class="inputHead">What’s your driving age?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q2" value="1"  class="q2">
+            <span class="checkmark Q2A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q2" value="2" class="q2">
+            <span class="checkmark Q2B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q2" value="3" class="q2">
+            <span class="checkmark Q2C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q2" value="4" class="q2">
+             <span class="checkmark Q2D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 3------->
+
+<!-------Tab 4------->
+    <div class="tab4 tab-panel">
+      <div class="inputHead">On a road trip, what is your job?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q3" value="4"  class="q3">
+            <span class="checkmark Q3A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q3" value="3" class="q3">
+            <span class="checkmark Q3B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q3" value="1" class="q3">
+            <span class="checkmark Q3C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q3" value="2" class="q3">
+             <span class="checkmark Q3D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 4------->
+
+<!-------Tab 5------->
+    <div class="tab5 tab-panel">
+      <div class="inputHead">What song is on your road trip playlist?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q4" value="2"  class="q4">
+            <span class="checkmark Q4A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q4" value="4" class="q4">
+            <span class="checkmark Q4B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q4" value="1" class="q4">
+            <span class="checkmark Q4C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q4" value="3" class="q4">
+             <span class="checkmark Q4D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 5------->
+
+<!-------Tab 6------->
+    <div class="tab6 tab-panel">
+      <div class="inputHead">Where are you driving?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q5" value="4"  class="q5">
+            <span class="checkmark Q5A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q5" value="1" class="q5">
+            <span class="checkmark Q5B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q5" value="3" class="q5">
+            <span class="checkmark Q5C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q5" value="2" class="q5">
+             <span class="checkmark Q5D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 6------->
+
+<!-------Tab 7------->
+    <div class="tab7 tab-panel">
+      <div class="inputHead">Add some technology to your ride</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q6" value="1"  class="q6">
+            <span class="checkmark Q6A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q6" value="2" class="q6">
+            <span class="checkmark Q6B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q6" value="3" class="q6">
+            <span class="checkmark Q6C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q6" value="4" class="q6">
+             <span class="checkmark Q6D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 7------->
+
+<!-------Tab 8------->
+    <div class="tab8 tab-panel">
+      <div class="inputHead"> Pick a movie</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q7" value="1"  class="q7">
+            <span class="checkmark Q7A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q7" value="4" class="q7">
+            <span class="checkmark Q7B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q7" value="2" class="q7">
+            <span class="checkmark Q7C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q7" value="3" class="q7">
+             <span class="checkmark Q7D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 8------->
+
+<!-------Tab 9------->
+    <div class="tab9 tab-panel">
+      <div class="inputHead">What is your ideal driving speed?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q8" value="2"  class="q8">
+            <span class="checkmark Q8A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q8" value="4" class="q8">
+            <span class="checkmark Q8B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q8" value="3" class="q8">
+            <span class="checkmark Q8C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q8" value="1" class="q8">
+             <span class="checkmark Q8D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 8------->
+
+<!-------Tab 9------->
+    <div class="tab10 tab-panel">
+      <div class="inputHead">Why are you driving?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q9" value="3"  class="q9">
+            <span class="checkmark Q9A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q9" value="4" class="q9">
+            <span class="checkmark Q9B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q9" value="2" class="q9">
+            <span class="checkmark Q9C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q9" value="1" class="q9">
+             <span class="checkmark Q9D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 10------->
+
+<!-------Tab 11------->
+    <div class="tab11 tab-panel">
+      <div class="inputHead">What’s your biggest driving pet peeve?</div>
+
+      <div class="imgcontent">
+        <label class="labelcontainer">Option1
+           <input type="radio" name="q10" value="1"  class="q10">
+            <span class="checkmark Q10A"></span>
+        </label>
+
+        <label class="labelcontainer">Option2
+            <input type="radio" name="q10" value="2" class="q10">
+            <span class="checkmark Q10B"></span>
+       </label>
+        <br>
+
+        <label class="labelcontainer">Option3
+            <input type="radio" name="q10" value="3" class="q10">
+            <span class="checkmark Q10C"></span>
+        </label>
+
+        <label class="labelcontainer">Option4
+             <input type="radio" name="q10" value="4" class="q10">
+             <span class="checkmark Q10D"></span>
+        </label>
+      </div>
+    </div>
+<!-------END Tab 11------->
+<input type="text" name="score" style="display: none;" class="score">
+<input type="text" name="result" style="display: none;" class="result">
+  </form>
+  <!--------Result 1--------->
+  <div class="Result" style="width: 100%;" id="Res1">
+  <h1 class="ResultHead">Get off the road!</h1>
+  <div>
+    <p class="ResultContent">Whoa there, speed racer! We’re not saying you’re a bad driver. . . just that you might need all the help you can get. Our new auto-calibrating 360-degree camera system will give you an extra set of eyes all the way around your vehicle.</p>
+    <img src="images/Result1.png" id="Resultimg">
+  </div>
+  </div>
+  <!-------End Result 1-------->
+
+  <!--------Result 2--------->
+  <div class="Result" style="width: 100%;" id="Res2">
+  <h1 class="ResultHead">Student Driver</h1>
+  <div>
+    <p class="ResultContent">You aren’t the worst driver we’ve ever seen but you could use some assistance to keep you focused. Our blind spot detection system is designed to give you advanced warning if something is in the way when you go to change lanes.</p>
+    <img src="images/Result2.png" id="Resultimg">
+  </div>
+  </div>
+  <!-------End Result 2-------->
+
+  <!--------Result 3--------->
+  <div class="Result" style="width: 100%;" id="Res3">
+  <h1 class="ResultHead">Not too shabby</h1>
+  <div>
+    <p class="ResultContent">You’re pretty good at this driving thing. But like mom always said, it helps to have eyes in the back of your head. Grab one of our high definition back up cameras and you’ll be good to go. </p>
+    <img src="images/Result3.png" id="Resultimg">
+  </div>
+  </div>
+  <!-------End Result 3-------->
+
+  <!--------Result 4--------->
+  <div class="Result" style="width: 100%;" id="Res4">
+  <h1 class="ResultHead">You should teach driver’s ed!</h1>
+  <div >
+    <p class="ResultContent">You’re comfortable and confident behind the wheel, and it shows! But not everyone on the road is as great a driver as you are. Check out our forward-facing cameras so you have a little extra insurance. . . just in case.</p>
+    <img src="images/Result4.png" id="Resultimg">
+  </div>
+  </div>
+  <!-------End Result 4-------->
+</main>
+<div id="success" style="display: none;"></div>
+</section>
+<footer>
+
+ 
+    <img src="../../assets/footer.png">
+</footer>
+
+<div id="dialog-overlay"></div>
+      <div id="dialog-box">
+        
+      </div>
+
+
+</body>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+
+    <script src="js/quiz.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="../Common/Scripts/common-inner.js"></script>
+
+<script language="javascript" type="text/javascript">
+
+  $(function(){
+      $('#name, #email').keyboard({
+        // keep any changes
+        usePreview: true, // disabled for contenteditable
+        autoAccept: true,
+        display: {
+            'accept' : 'Enter'
+        },
+        layout: 'custom',
+        customLayout: {
+          'normal': [
+            '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+            '{tab} q w e r t y u i o p [ ] \\',
+            'a s d f g h j k l ; \'',
+            '{shift} z x c v b n m , . / {shift}',
+            '{accept} {space} {left} {right} {sp:.2} {del} {toggle}'
+          ],
+          'shift': [
+            '~ ! @ # $ % ^ & * ( ) _ + {bksp}',
+            '{tab} Q W E R T Y U I O P { } |',
+            'A S D F G H J K L : " {enter}',
+            '{shift} Z X C V B N M &lt; &gt; ? {shift}',
+            '{accept} {space} {left} {right} {sp:.2} {del} {toggle}'
+          ]
+        }
+    });
+    });
+   
+</script>
+
+
+<style type="text/css">
+  .main-content {
+    height: 1100px;
+  }
+  .title {
+    font-size: 55px;}
+
+  form input[type="text"], form input[type="email"] {
+    width: 230px!important;
+    height: 35px!important;
+    border: 1px solid #cf7c0033;
+  }
+body{
+  overflow: scroll!important;
+}
+</style>
+
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../Scripts/Language.js"></script>
+    <script src="../../Scripts/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../maincontents.js"></script>
+    <script src="../../boots/js/bootstrap.min.js"></script>
+    <script src="js/Videos.js"></script>
+    
+
+    <link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+    <link href="css/Videos.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/Main.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body onload="" onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;"  oncontextmenu="return false;" style="-ms-user-select:none;padding: 0; margin: 0; background-repeat: no-repeat; width: 1080px; height: 1920px; " class="noselect unselectable">
+<!--<header>
+  <div class="logo" src onclick="FC_ContentsCall('Home')">
+    <img src="../../assets/logo.png">
+  </div>
+</header>-->
+<nav>
+  <img src="../../assets/icons/home.png" class="img-home" onclick="FC_ContentsCall('Menu')">
+</nav>
+<section class="main-content">
+   <!--<h1 class="title">Website</h1>-->
+<iframe id="volframe" src="https://voyagercameras.com/" name="myFrame" target="myFrame" width="1080" height="1370"></iframe>
+</section>
+<footer>
+
+ 
+    <img src="../../assets/footer.png">
+</footer>
+
+<div id="dialog-overlay"></div>
+      <div id="dialog-box">
+        
+      </div>
+
+
+</body>
+
+<script type="application/javascript">
+
+  function JSUnload(){
+    window.external.RobotDanceStart(false);
+  }
+   
+</script>
+
+
+<script language="JavaScript" type="text/javascript" src="../Common/Scripts/common-inner.js"></script>
+
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script>
+
+<style type="text/css">
+  .main-content {
+    height: 1370px;
+}
+.navigation {
+    width: 100%;
+    margin: 180px 0 0 0;
+    height: 500px;
+    justify-content: center;
+    display: flex;
+}
+.navigation-box {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+</style>
+
+
+</html>
