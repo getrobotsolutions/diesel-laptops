@@ -16,10 +16,6 @@
     
     <link href="css/Main.css" rel="stylesheet" type="text/css"/>
 
-    <style>
-       
-
-    </style>
 </head>
 
 
@@ -47,9 +43,6 @@
 
   <footer style="">
   </footer>
-  <div id="dialog-overlay"></div>
-  <div id="dialog-box" style="">    
-  </div>
   <style type="text/css">
     body{
       background-color: #004990;
@@ -82,19 +75,23 @@
     }
   </style>
 <script>
-var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
-        //ChangeLanguage('en-us');
-        $(document).ready(function() {
+    var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
+    //ChangeLanguage('en-us');
+    $(document).ready(function() {
 
-            flag = true;
-            var barcode = "";
-            $(document).keydown(function (e) {
-                var code = (e.keyCode ? e.keyCode : e.which);
-                console.log(code);
-                if(flag !== false) {
-                    //if(code === 13)// Enter key hit
-                    if (barcode.length === 5) {					
+      flag = true;
+      var barcode = "";
+      badgenumber="";
+
+      $(document).keydown(function (e) {
+        
+        var code = (e.keyCode ? e.keyCode : e.which);
+        console.log(code);
+        if(flag !== false) {
+          //if(code === 13)// Enter key hit
+          if (barcode.length === 5) {					
 						barcode = barcode + String.fromCharCode(code);
+            badgenumber=barcode;
                         //flag = false;
                         //alert(barcode);
                         //barcode = barcode.split('').join('');
@@ -107,63 +104,54 @@ var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
                         //var scancode = array[0].toString().toLowerCase();
                         //alert(scancode);
                         //var bnumber=barcode.slice(0, 6);
-                        $.ajax({
-                          dataType: 'JSON',
-                          cache: false,
-                          url: 'https://mxlsandbox.expologic.com/api/api.cfc',
-                          data: {
-                          method: 'getPartnerBadge',
-                          returnformat: 'json',
-                          authToken: authToken,
-                          badgeNumber: barcode
-                        },
-                        success: function(j) {
-                          //do something with j
-                          alert("Welcome " + j.FIRSTNAME + " " + j.LASTNAME);
-                        }
-                      });
-                        barcode = "";
-                    }
-                    else {
+            $.ajax({
+              dataType: 'JSON',
+              cache: false,
+              url: 'https://mxlsandbox.expologic.com/api/api.cfc',
+              data: {
+                method: 'getPartnerBadge',
+                returnformat: 'json',
+                authToken: authToken,
+                badgeNumber: barcode
+              },
+              success: function(j) {
+                //do something with j
+                PlaySpeech("Welcome " + j.FIRSTNAME + " " + j.LASTNAME);
+                //alert("Welcome " + j.FIRSTNAME + " " + j.LASTNAME);
+                var dataString = {'badgeNumber': badgenumber, 'firstName':j.FIRSTNAME , 'lastName': j.LASTNAME, 'company':j.COMPANY,'phone':j.PHONE,'email':j.EMAILADDRESS, 'address':j.ADDRESS1,'city':j.CITY, 'country':j.COUNTRY };
+                $.ajax({
+                  url: "https://robotaisolutions.com/BadgeScanning/diesel-laptops.php",
+                  type: "post",
+                  data: dataString,
 
-                        barcode = barcode + String.fromCharCode(code);
-                    }
-                }
-                
-
-            });
-
-        });
-    </script>
-
-<script>
-   /* 
-
-
-    
-
-        var dataString = {'ScanCode': message, 'q1':q1 , 'q2': q2};
-
-        $.ajax({
-            url: "https://robotaisolutions.com/BadgeScanning/crownBioApi.php",
-            type: "post",
-            data: dataString,
-
-            success: function (data) {
+                success: function (data) {
                 //alert(data);
                 console.log(data);
                 if (data.response === 'success') {
-                    //alert("Hi " + fname + " " + lname + ", welcome to the Crown Bio" + scanCode +" "+ bnumber);
-                    //alert(scancode);
-                    barcode = "";
-                    array = null;
+                    //alert("success");
                     location.href = "menu.html";
                 }
 
             }
         });
-    
-*/
-</script>
+
+              }
+            });
+            
+            barcode = "";
+          }
+          else {
+            barcode = barcode + String.fromCharCode(code);
+          }
+        }        
+      });
+    });
+
+   
+        
+
+        
+
+  </script>
 </body>
 </html>
