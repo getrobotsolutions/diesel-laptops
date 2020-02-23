@@ -1,0 +1,207 @@
+main div.inner-border {
+    border: 5px #ffb111 solid;
+    margin: 10px;
+    padding: 20px 0;
+}
+main {
+   width: 80%;
+    margin: auto;
+    background: white;
+    border: 10px #ffb111 solid;
+}
+div.trivia-head{
+  width: 100%;
+  display: inline-flex;
+  padding: 0 60px 0 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.trivia-border {
+    position: absolute;
+    width: 120px;
+    height: 7px;
+    top: 120px;
+    border-radius: 50px;
+    left: 43.5%;
+    background: #ffb111;
+}
+img.trivia-icon {
+    width: 100px;
+}
+
+    
+
+#regForm h1{
+  color: #524f56;
+  font-weight: 800;
+}
+
+#regForm {
+ padding: 40px;
+ min-width: 106px;
+ margin: auto;
+ font-family: inherit;
+ width: 95%;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #ffb111;
+  color: #ffffff!important;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #ffb111;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #e80028;
+}
+
+.inputGroup div input{
+width: 15%;
+}
+.inputGroup {
+    margin-top: 20px;
+}
+.inputGroup div{
+  padding-top: 15px;
+}
+.tab {
+    font-size: 25px;
+}
+
+/*------------------------*/
+.InputContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.InputContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.InputContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.InputContainer input:checked ~ .checkmark {
+  background-color: #ffb111;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.InputContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.InputContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 7px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#showAns{
+  display: none;
+}
+
+span#showAnsq1 , span#showAnsq2 ,
+ span#showAnsq3, span#showAnsq4, 
+ span#showAnsq5, span#showAnsq6{
+    top: 10px;
+    text-align: center;
+    font-size: 23px;
+    color: #e80028;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    display: none;
+    padding-top: 25px;
+}
+#username, #email{
+  background:transparent !important;
+  color: #333 !important;
+}
