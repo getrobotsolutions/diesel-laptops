@@ -146,7 +146,13 @@
             barcode = "";
           }
           else {
-            barcode = barcode + String.fromCharCode(code);
+              if(code === 189) {
+                  barcode = barcode + '-';
+              }
+              else{
+                  barcode = barcode + String.fromCharCode(code);
+              }
+
             console.log(barcode);
           }
         }        
