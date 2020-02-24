@@ -11,9 +11,9 @@
         jokes[9]="Want to know my favorite dance? It’s the robot";
 
         var speak = new Array( );
-        speak[0] = "Scroll though to see the Diesel Difference";
+        speak[0] = "Scroll though to see the Diesel Difference.";
         speak[1] = "Let's see how smart you are.";
-        speak[2] = "How luck do you feel?  Take a spin to win a prize.";
+        speak[2] = "How lucky do you feel?  Take a spin to win a prize.";
         speak[3] = "";
         speak[4] = "Take a picture with me.";
         speak[5] = "Pick a song and let's boogie.";
