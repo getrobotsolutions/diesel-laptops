@@ -75,7 +75,10 @@
     }
   </style>
 <script>
-    var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";
+
+    //var authToken="81B4003C-CE18-9F80-45F2678B17EB061C";  //  Sandbox Token
+    var authToken="BB1024BA-C975-4F44-5B0D2A5549F6CD8C";    // Production Token
+
     //ChangeLanguage('en-us');
     $(document).ready(function() {
 
@@ -107,7 +110,8 @@
             $.ajax({
               dataType: 'JSON',
               cache: false,
-              url: 'https://mxlsandbox.expologic.com/api/api.cfc',
+              //url: 'https://mxlsandbox.expologic.com/api/api.cfc',    // sandbox URL
+              url: 'https://myexpoleads.expologic.com/api/api.cfc',      // Production URL
               data: {
                 method: 'getPartnerBadge',
                 returnformat: 'json',
@@ -146,12 +150,33 @@
         }        
       });
     });
-
-   
-        
-
-        
-
   </script>
-</body>
-</html>
+
+
+  <script>
+      /*
+      $.ajax({
+          dataType: 'json',
+          cache: false,
+          url: 'https://myexpoleads.expologic.com/api/api.cfc',
+          data: {
+              method: 'verifyUser',
+              returnformat: 'json',
+              apikey: '7A55D87B0E2265223B0463E15BC3D8C1',
+              authorizationCode: 52738,
+              password: '14EBFB41',
+              deviceID: 'FF:FF:FF:00:00:06'
+          },
+          success: function(j){
+              authToken = j.AUTHTOKEN;
+              console.log("Aut Toc:", authToken);
+          }
+      });
+      var authToken="BB1024BA-C975-4F44-5B0D2A5549F6CD8C";
+
+      */
+
+      </script>
+
+  </body>
+  </html>
