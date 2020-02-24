@@ -50,8 +50,8 @@ function FC_ContentsCall(strContentsName, strLanguage)
             //PlaySpeech(speak[1]);
            break;
 
-        case "Website":
-            location.href = "Contents/Website/index.html";
+        case "Slides":
+            location.href = "Contents/Slides/index.html";
             //PlaySpeech(speak[2]);
             break;
 
