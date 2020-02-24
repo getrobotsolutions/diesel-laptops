@@ -11,9 +11,9 @@
         jokes[9]="Want to know my favorite dance? It’s the robot";
 
         var speak = new Array( );
-        speak[0] = "";
-        speak[1] = "";
-        speak[2] = "";
+        speak[0] = "Scroll though to see the Diesel Difference";
+        speak[1] = "Let's see how smart you are.";
+        speak[2] = "How luck do you feel?  Take a spin to win a prize.";
         speak[3] = "";
         speak[4] = "Take a picture with me.";
         speak[5] = "Pick a song and let's boogie.";
@@ -27,7 +27,7 @@ function FC_ContentsCall(strContentsName, strLanguage)
     switch (strContentsName)
     {
         case "Welcome":
-            PlaySpeech("Hi, I’m Tracey, welcome to the Novartis booth. Please click around on my screen and then speak to my smart human friends in the booth.");
+            //PlaySpeech("Hi, I’m Tracey, welcome to the Novartis booth. Please click around on my screen and then speak to my smart human friends in the booth.");
             break;
 
         case "Home":
@@ -42,22 +42,22 @@ function FC_ContentsCall(strContentsName, strLanguage)
 
         case "PrizeWheel":
            location.href = "Contents/PrizeWheel/index.html";
-            //PlaySpeech(speak[0]);
+            PlaySpeech(speak[2]);
            break;
 
         case "Quiz":
            location.href = "Contents/Quiz/index.html";
-            //PlaySpeech(speak[1]);
+            PlaySpeech(speak[1]);
            break;
 
         case "Slides":
             location.href = "Contents/Slides/index.html";
-            //PlaySpeech(speak[2]);
+            PlaySpeech(speak[0]);
             break;
 
         case "Dance":
             location.href = "Contents/Dance/index.html";
-           /* PlaySpeech(speak[3]); */
+            PlaySpeech(speak[5]);
             break;
 
 
@@ -68,7 +68,7 @@ function FC_ContentsCall(strContentsName, strLanguage)
 
          case "RobotAvatar":
             location.href = "Contents/RobotAvatar/index.htm";
-            PlaySpeech(speak[4]);
+            PlaySpeech(speak[3]);
             break;       
         
             
