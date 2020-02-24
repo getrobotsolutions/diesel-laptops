@@ -94,7 +94,7 @@
           //if(code === 13)// Enter key hit
           if (barcode.length === 12) {
 						barcode = barcode + String.fromCharCode(code);
-						alert(barcode);
+						//alert(barcode);
             badgenumber=barcode;
                         //flag = false;
                         //alert(barcode);
@@ -182,41 +182,6 @@
       });
       var authToken="BB1024BA-C975-4F44-5B0D2A5549F6CD8C";
 
-
-      $.ajax({
-          dataType: 'JSON',
-          cache: false,
-          //url: 'https://mxlsandbox.expologic.com/api/api.cfc',    // sandbox URL
-          url: 'https://myexpoleads.expologic.com/api/api.cfc',      // Production URL
-          data: {
-              method: 'getPartnerBadge',
-              returnformat: 'json',
-              authToken: authToken,
-              badgeNumber: "9000367987-10"
-          },
-          success: function(j) {
-              //do something with j
-              //PlaySpeech("Welcome " + j.FIRSTNAME + " " + j.LASTNAME);
-              console.log("Welcome " + j.FIRSTNAME + " " + j.LASTNAME);
-              var dataString = {'badgeNumber': badgenumber, 'firstName':j.FIRSTNAME , 'lastName': j.LASTNAME, 'company':j.COMPANY,'phone':j.PHONE,'email':j.EMAILADDRESS, 'address':j.ADDRESS1,'city':j.CITY, 'country':j.COUNTRY };
-              $.ajax({
-                  url: "https://robotaisolutions.com/BadgeScanning/diesel-laptops.php",
-                  type: "post",
-                  data: dataString,
-
-                  success: function (data) {
-                      //alert(data);
-                      console.log(data);
-                      if (data.response === 'success') {
-                          //alert("success");
-                          location.href = "menu.html";
-                      }
-
-                  }
-              });
-
-          }
-      });
         */
 
       </script>
