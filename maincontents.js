@@ -11,7 +11,7 @@
         jokes[9]="Want to know my favorite dance? It’s the robot";
 
         var speak = new Array( );
-        speak[0] = "Scroll through the slideshow to see the Diesel Laptop difference.";
+        speak[0] = "Scroll through the slideshow to see the Diesel Laptops difference.";
         speak[1] = "Let's see how smart you are.";
         speak[2] = "How lucky do you feel?  Take a spin to win a prize.";
         speak[3] = "";
